@@ -1,0 +1,33 @@
+Sep 09 16:00:42 symfony [emerg] unlink file with registration request name = xela returned 1
+Sep 10 19:32:30 symfony [emerg] unlink file with registration request name = txd3kxjg returned 1
+Sep 10 19:37:43 symfony [emerg] unlink file with registration request name = korsar returned 1
+Sep 11 12:29:42 symfony [emerg] unlink file with registration request name = goosevan returned 1
+Sep 11 13:28:59 symfony [emerg] unlink file with registration request name = madevil returned 1
+Sep 11 13:29:57 symfony [emerg] unlink file with registration request name = korsardimich returned 1
+Sep 11 13:34:58 symfony [emerg] unlink file with registration request name = korsar returned 1
+Sep 11 13:38:52 symfony [emerg] unlink file with registration request name = ghost returned 1
+Sep 11 13:47:49 symfony [emerg] unlink file with registration request name = korsardimich returned 1
+Sep 14 17:17:49 symfony [emerg] unlink file with registration request name = newmark returned 1
+Sep 17 17:49:40 symfony [alert] usiccheckpasswd called with return code 42: Goddamit, universal question solved!
+Sep 17 17:49:40 symfony [err] {Exception} system isn't working properly, talk with administrator
+Sep 18 12:17:50 symfony [alert] usic_userinfo called with return code 22: your present haven't been received in a proper way
+Sep 18 12:17:50 symfony [err] {Exception} system isn't working properly, talk with administrator
+Sep 18 15:18:51 symfony [alert] usic_userinfo called with return code 22: your present haven't been received in a proper way
+Sep 18 15:18:51 symfony [err] {Exception} system isn't working properly, talk with administrator
+Sep 21 17:28:56 symfony [emerg] unlink file with registration request name = bushkova returned 1
+Sep 21 21:39:09 symfony [emerg] unlink file with registration request name = colleague returned 1
+Sep 23 19:54:37 symfony [emerg] caelum deleted /var/www/upload/upload_avail/43e2a613050b94118f6fef9cc108bb31abc6292b
+Sep 29 00:01:05 symfony [alert] usic_userinfo called with return code 22: your present haven't been received in a proper way
+Sep 29 00:01:05 symfony [err] {Exception} system isn't working properly, talk with administrator
+Oct 02 19:15:16 symfony [emerg] unlink file with registration request name = aelinna returned 1
+Oct 03 15:14:31 symfony [emerg] unlink file with registration request name = ien returned 1
+Oct 04 12:50:11 symfony [alert] usiccheckpasswd called with return code 42: Goddamit, universal question solved!
+Oct 04 12:50:11 symfony [err] {Exception} system isn't working properly, talk with administrator
+Oct 04 12:50:15 symfony [alert] usiccheckpasswd called with return code 42: Goddamit, universal question solved!
+Oct 04 12:50:15 symfony [err] {Exception} system isn't working properly, talk with administrator
+Oct 04 16:55:19 symfony [emerg] unlink file with registration request name = slrv returned 1
+Oct 04 18:09:36 symfony [emerg] unlink file with registration request name = slrv returned 1
+Oct 05 01:48:45 symfony [err] {sfConfigurationException} Unable to find a matching route to generate url for params "NULL".
+Oct 05 16:35:17 symfony [emerg] dzubchik deleted /var/www/upload/upload_avail/fe71f9d2266884cd6282f25e43c06de150e87b20
+Oct 05 16:46:49 symfony [emerg] unlink file with registration request name = vaso returned 1
+Oct 05 17:12:46 symfony [err] {sfException} Call to undefined method BaseLinksTable::getPosition

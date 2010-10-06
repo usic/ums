@@ -1,0 +1,6 @@
+# default values
+all:
+  sf_phpopenid_plugin:
+    lib_path: %SF_ROOT_DIR%/lib/php-openid
+    #lib_path: /var/www/htdocs/site/plugins/sfPHPOpenIdPlugin/
+  ExceptionFilter: on

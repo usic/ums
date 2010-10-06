@@ -1,0 +1,17 @@
+default:
+  http_metas:
+    content-type: text/html
+    charset:      utf-8
+
+  metas:
+    title:        Ukma Student Internet Center
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:    [main.css]
+
+  javascripts:    [prof_class.php]
+  has_layout:     on
+  layout:         layout

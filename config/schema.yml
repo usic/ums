@@ -1,0 +1,105 @@
+propel:
+  _attributes:
+    package: lib.model
+    defaultIdMethod: native
+  actions:
+    _attributes: { phpName: ActionsTable }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    action: { type: VARCHAR, size: '20', required: true }
+  category:
+    _attributes: { phpName: CategoryTable }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    name: { type : VARCHAR, size: '25', required: true }
+  class:
+    _attributes: { phpName: ClassTable }
+    id: { type: INTEGER, size: '11', primaryKey: true, required: true }
+    name: { type: VARCHAR, size: '20', required: true }
+    faculty: { type: CHAR, size: '4', required: true }
+    profession_id: { type: INTEGER, size: '11', required: false, onDelete: setnull }
+    _foreignKeys:
+      -
+        foreignTable: professions
+        references:
+          - { local: profession_id, foreign: id }
+  history:
+    _attributes: { phpName: HistoryTable }
+    daytime: { type: TIMESTAMP, required: true }
+    user: { type: VARCHAR, size: '25', required: true }
+    gid: { type: VARCHAR, size: '15', required: true }
+    action_id: { type: INTEGER, size: '11', required: true }
+    arguments: { type: LONGVARCHAR, required: false }
+    return_code: { type: INTEGER, size: '11' }
+    id: { type: INTEGER, size: '11', primaryKey: true, required: true }
+    _foreignKeys:
+      -
+        foreignTable: actions
+        references:
+          - { local: action_id, foreign: id }
+  nightload:
+    _attributes: { phpName: NightloadTable }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    user: { type: VARCHAR, size: '25', required: true }
+    begin: { type: TIMESTAMP, required: true }
+    finish: { type: TIMESTAMP, required: true }
+    state: { type: VARCHAR, size: '15', required: true }
+    url: { type: LONGVARCHAR, required: true }
+    protocol: { type: VARCHAR, size: '10', required: false }
+    path: { type: LONGVARCHAR, required: true }
+  links:
+    _attributes: { phpName: LinksTable }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    module_name: { type: LONGVARCHAR, required: true }
+    action_name: { type: LONGVARCHAR, required: true }
+    name: { type: LONGVARCHAR, required: true }
+    created_at: { type: TIMESTAMP, required: true }
+  permissions:
+    _attributes: { phpName: PermissionsTable }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    link_id: { type: INTEGER, size: '11', required: true }
+    gid: { type: VARCHAR, size: '15', reqired: true }
+    mode: { type: CHAR, required: true }
+    change_at: { type: TIMESTAMP, required: true }
+    change_login: { type: VARCHAR, size: '25', required: true }
+    _foreignKeys:
+      -
+        foreignTable: links
+        references:
+          - { local: link_id, foreign: id }
+  printings:
+    _attributes: { phpName: PrintingsTable }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    user: { type: VARCHAR, size: '25', required: true }
+    daytime: { type: TIMESTAMP, required: true }
+    cost: { type: INTEGER, size: '10', required: false }
+    pages: { type: INTEGER, size: '10', required: true, defaultValue: '1' }
+  professions:
+    _attributes: { phpName: ProfessionsTable }
+    id: { type: INTEGER, size: '11', primaryKey: true, required: true }
+    name: { type: VARCHAR, size: '20', required: true }
+  registrationRequests:
+    _attributes: { phpName: RegistrationRequestsTable }
+    id: { type: INTEGER, size: '20', primaryKey: true, autoIncrement: true, required: true }
+    name: { type: LONGVARCHAR, required: true }
+    daytime: { type: TIMESTAMP, required: true }    
+    dataLocation: { type: LONGVARCHAR, required: true }
+  registrations:
+    _attributes: { phpName: RegistrationsTable }
+    daytime: { type: TIMESTAMP, required: true }
+    staff_login: { type: VARCHAR, size: '25', required: true }
+    registered_login: { type: VARCHAR, size: '25', primaryKey: true, required: true }
+  upload:
+    _attributes: { phpName: UploadTable }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    user: { type: VARCHAR, size: '25', required: true }
+    daytime: { type: TIMESTAMP, required: true }
+    url: { type: LONGVARCHAR, required: true }
+    filename: { type: LONGVARCHAR, required: true }
+    filesize: { type: INTEGER, size: '10', required: true }
+    state: { type: CHAR, required: true }
+    description: { type: LONGVARCHAR }
+    category_id: { type: INTEGER, size: '11', required: true }
+    _foreignKeys:
+      -
+        foreignTable: category
+        references:
+          - { local: category_id, foreign: id }

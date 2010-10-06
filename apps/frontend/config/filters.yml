@@ -1,0 +1,11 @@
+rendering: ~
+#security:  ~
+security:
+  class: DBSecurityFilter
+
+# insert your own filters here
+#ExceptionFilter:
+#  class: ExceptionFilter
+cache:     ~
+common:    ~
+execution: ~

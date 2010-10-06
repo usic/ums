@@ -1,0 +1,11 @@
+default:
+  is_secure: on
+
+show:
+  is_secure: off
+  
+download:
+  is_secure: off
+  
+all:
+  is_secure: on

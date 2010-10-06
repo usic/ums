@@ -1,0 +1,10 @@
+rendering: ~
+security:  ~
+#security:
+ # class: DBSecurityFilter
+
+# insert your own filters here
+
+cache:     ~
+common:    ~
+execution: ~

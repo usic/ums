@@ -1,0 +1,42 @@
+openid_finishauth:
+  url: /cliens/finish
+  param: { module: cliens, action: finish }
+
+openid_error:
+  url: /cliens/openidError
+  param: { module: cliens, action: openidError }
+
+# default rule
+homepage:
+  url:   /
+  param: { module: cliens, action: index }
+
+um:
+  url:   /user/:action
+  param: { module: um }
+
+gm:
+  url:   /group/:action
+  param: { module: gm }
+
+remove_user:
+  url:   /removeUser/:user
+  param: { module: gm, action: removeUser }
+
+showMy:
+  url: /myuploads
+  param: { module: upload, action: showMy }
+  
+#show:
+#  url: /uploads
+#  param: { module: upload, action: show }
+
+# default rule
+default_index:
+  url:   /:module
+  param: { action: index }
+
+# default rule
+default:
+  url:   /:module/:action/*
+

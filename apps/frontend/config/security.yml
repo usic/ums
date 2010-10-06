@@ -1,0 +1,10 @@
+default:
+  is_secure: off
+
+all:
+  .actions:
+    login_module:  cliens
+    login_action:  login
+
+    secure_module: default
+    secure_action: secure

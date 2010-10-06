@@ -1,0 +1,55 @@
+fields:
+  file:
+    required:
+      msg: you must choose a file
+    sfFileValidator
+      mime_types:
+        - 'application/rtf'
+	- 'application/pdf'
+	- 'application/postscript'
+	- 'application/vnd.oasis.opendocument.text'
+	- 'application/zip'
+	- 'application/x-zip'
+	- 'application/x-zip-compressed'
+	- 'application/x-gzip'
+	- 'application/bzip2'
+	- 'application/x-tar'
+	- 'application/x-bzip2'
+	# audio   
+	- 'audio/x-ogg'
+	- 'audio/mpeg3'
+	- 'audio/x-mpeg-3'
+	- 'audio/mpeg'
+	- 'audio/x-mpequrl'
+	# video
+	- 'application/x-troff-msvideo'
+	- 'video/mpeg'
+	- 'video/x-mpeg'
+	- 'video/avi'
+	- 'video/msvideo'
+	- 'video/x-msvideo'
+	- 'video/x-flv'
+	# image
+	- 'image/gif'
+	- 'image/x.djvu'
+	- 'image/vnd.djvu'
+	- 'image/djvu'
+	- 'audio/x-ogg'
+	- 'image/gif'
+	- 'image/tiff'
+	- 'image/jpeg'
+	- 'image/jpg'
+	- 'image/pjpeg'
+	- 'image/png'
+	- 'image/x-png'
+	- 'image/svg'
+	- 'image/svg+xml'
+	- 'image/svg-xml'
+	- 'text/xml-svg'
+	- 'image/vnd.adobe.svg+xml'
+	- 'text/rtf'
+	- 'text/html'
+	- 'text/plain'
+      mime_types_error: we don&prime;t accept such file format
+      max_size: 1024000000
+      max_size_error: this file is too big

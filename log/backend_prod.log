@@ -1,0 +1,17 @@
+Sep 18 18:18:56 symfony [info] {sfPatternRouting} Connect sfRoute "homepage" (/)
+Sep 18 18:18:56 symfony [info] {sfPatternRouting} Connect sfRoute "default_index" (/:module)
+Sep 18 18:18:56 symfony [info] {sfPatternRouting} Connect sfRoute "default" (/:module/:action/*)
+Sep 18 18:18:56 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'admin',  'action' => 'index',)
+Sep 18 18:18:57 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 18 18:18:57 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Sep 18 18:18:57 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 18 18:18:57 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Sep 18 18:18:57 symfony [info] {sfFilterChain} Executing filter "sfCommonFilter"
+Sep 18 18:18:57 symfony [info] {sfFilterChain} Executing filter "sfValidationExecutionFilter"
+Sep 18 18:18:57 symfony [info] {defaultActions} Call "defaultActions->executeLogin()"
+Sep 18 18:18:57 symfony [info] {sfPHPView} Render "/home/caelum/public_html/project/lib/symfony/controller/default/templates/loginSuccess.php"
+Sep 18 18:18:57 symfony [info] {sfPHPView} Decorate content with "/home/caelum/public_html/project/lib/symfony/controller/default/templates/defaultLayout.php"
+Sep 18 18:18:57 symfony [info] {sfPHPView} Render "/home/caelum/public_html/project/lib/symfony/controller/default/templates/defaultLayout.php"
+Sep 18 18:18:57 symfony [info] {sfWebResponse} Send status "HTTP/1.0 200 OK"
+Sep 18 18:18:57 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 18 18:18:57 symfony [info] {sfWebResponse} Send content (1680 o)
