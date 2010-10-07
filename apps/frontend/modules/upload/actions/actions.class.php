@@ -159,6 +159,7 @@ class uploadActions extends sfActions
   {
     $this->forward404Unless($upload_table = UploadTablePeer::retrieveByPk($request->getParameter('id')), sprintf('Object upload_table does not exist (%s).', $request->getParameter('id')));
     $this->form = new UploadTableForm($upload_table);
+    #print_r($upload_table);
   }
 
   public function executeUpdate(sfWebRequest $request)

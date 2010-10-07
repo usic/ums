@@ -2,10 +2,10 @@
 <?php include_javascripts_for_form($form) ?>
 
 
-<?php if ($form->getObject()->isNew()): ?>
-What are you doing here?
+<?php if (($form->getObject()->isNew())||($form->getObject()->getUser()!==$sf_user->getAttribute('login'))): ?>
+What are you doing here? You don&prime;t have permission to edit this upload.
 <?php else: ?>
-
+<?php #echo ($sf_user->getUser()) ?>
 <form action="<?php echo url_for('upload/update?id='.$form->getObject()->getId()) ?>" method="post" enctype="multipart/form-data" >
 <input type="hidden" name="sf_method" value="put" />
 

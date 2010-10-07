@@ -22,20 +22,28 @@
   <tfoot>
 <tr><th align="center" colspan="8">
 <?php if ($pager->haveToPaginate()): ?>
-<?php $getParam = '';//sfContext::getInstance()->getRouting()->getCurrentInternalUri();
+<?php /*$getParam = '';//sfContext::getInstance()->getRouting()->getCurrentInternalUri();
     $par = sfContext::getInstance()->getRequest()->getGetParameter('who', '');
     if (!is_null($par)) $getParam .= 'who='.$par;
     $par = sfContext::getInstance()->getRequest()->getGetParameter('state', '');
     if (!is_null($par)) $getParam .= '&state='.$par;
     $par = sfContext::getInstance()->getRequest()->getGetParameter('cat', '');
-    if (!is_null($par)) $getParam .= '&cat='.$par;
+    if (!is_null($par)) $getParam .= '&cat='.$par;*/
 ?>
-  <?php echo link_to('first', 'upload/show/page='.$pager->getFirstPage(), 
+<?php $getParam = '';//sfContext::getInstance()->getRouting()->getCurrentInternalUri();
+    $par = sfContext::getInstance()->getRequest()->getGetParameter('who', '');
+    if (strlen($par)>0) $getParam .= '&who='.$par;
+    $par = sfContext::getInstance()->getRequest()->getGetParameter('state', '');
+    if (strlen($par)>0) $getParam .= '&state='.$par;
+    $par = sfContext::getInstance()->getRequest()->getGetParameter('cat', '');
+    if (strlen($par)>0) $getParam .= '&cat='.$par;
+?>
+  <?php echo link_to('first', 'upload/show?page='.$pager->getFirstPage(), 
 		array('query_string' => $getParam)) ?>
   <?php echo link_to('&lt;', 'upload/show?page='.$pager->getPreviousPage(), array('query_string' => $getParam)) ?>
   <?php $links = $pager->getLinks(); foreach ($links as $page): ?>
-    <?php echo ($page == $pager->getPage()) ? $page : link_to($page, 'upload/show?page='.$page, array('query_string' => $getParam)) ?>
-    <?php if ($page != $pager->getCurrentMaxLink()): ?> - <?php endif ?>
+    <?php echo ($page == $pager->getPage()) ? $page : link_to($page, 'upload/show?page='.$page,array("query_string"=>$getParam)) ?>
+    <?php if ($page !== $pager->getCurrentMaxLink()): ?> - <?php endif ?>
   <?php endforeach ?>
   <?php echo link_to('&gt;', 'upload/show?page='.$pager->getNextPage(), array('query_string' => $getParam)) ?>
   <?php echo link_to('last', 'upload/show?page='.$pager->getLastPage(), array('query_string' => $getParam)) ?>

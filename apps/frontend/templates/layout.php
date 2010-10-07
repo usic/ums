@@ -16,7 +16,6 @@
     <div id="content">
 	<?php echo $sf_content ?>
     </div>
-    <!--<div id="links"><?php include_partial('global/links')?></div> -->
     <div id="links">	
 	<?php include_partial('global/links')?>
 </div>
