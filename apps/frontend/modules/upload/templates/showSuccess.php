@@ -18,18 +18,23 @@
 <?php include_partial('show2') ?>
       <th>who : <?php echo select_tag('who',options_for_select(UploadTablePeer::getUploaders(),$sf_request->getParameter('who')), 'onchange=document.getElementById(\'shform\').submit()') ?></th>
     </tr>
-  </thead>
-  <tfoot>
-<tr><th align="center" colspan="8">
+    </thead>
+    <?php foreach ($pager->getResults() as $upload_table): ?>
+    <tr>
+    <td > 
+      <a href="<?php echo 'http://usic.org.ua/upload'.substr($upload_table->getUrl(), strlen(sfConfig::get('sf_upload_dir'))) ?>"  targe="_blank"  title="Завантажити"></a>
+      </td>
+      <td >
+      <a class="name" href="<?php echo 'http://usic.org.ua/upload'.substr($upload_table->getUrl(), strlen(sfConfig::get('sf_upload_dir'))) ?>" title="<?php echo $upload_table->getFilename(); ?>"  targe="_blank" >
+    	    <?php $fname = $upload_table->getFilename(); echo strlen($fname) > 23 ? substr(substr($fname,0,strripos($fname,".")),0,23): $fname ?></a></td>
+     <!-- <td>--><?php #echo $upload_table->getFilesize() ?><!---/td>-->
+<?php include_partial('show3', array('upload_table'=> $upload_table)) ?>
+      <td><?php echo $upload_table->getUser() ?></td>
+    </tr>
+    <?php endforeach; ?>
+<tfoot>
+<tr><td align="center" colspan="8">
 <?php if ($pager->haveToPaginate()): ?>
-<?php /*$getParam = '';//sfContext::getInstance()->getRouting()->getCurrentInternalUri();
-    $par = sfContext::getInstance()->getRequest()->getGetParameter('who', '');
-    if (!is_null($par)) $getParam .= 'who='.$par;
-    $par = sfContext::getInstance()->getRequest()->getGetParameter('state', '');
-    if (!is_null($par)) $getParam .= '&state='.$par;
-    $par = sfContext::getInstance()->getRequest()->getGetParameter('cat', '');
-    if (!is_null($par)) $getParam .= '&cat='.$par;*/
-?>
 <?php $getParam = '';//sfContext::getInstance()->getRouting()->getCurrentInternalUri();
     $par = sfContext::getInstance()->getRequest()->getGetParameter('who', '');
     if (strlen($par)>0) $getParam .= '&who='.$par;
@@ -48,24 +53,9 @@
   <?php echo link_to('&gt;', 'upload/show?page='.$pager->getNextPage(), array('query_string' => $getParam)) ?>
   <?php echo link_to('last', 'upload/show?page='.$pager->getLastPage(), array('query_string' => $getParam)) ?>
 <?php endif ?>
-</th></tr>
-</tfoot>
-  <tbody>
-    <?php foreach ($pager->getResults() as $upload_table): ?>
-    <tr>
-    <td > 
-      <a href="<?php echo 'http://usic.org.ua/upload'.substr($upload_table->getUrl(), strlen(sfConfig::get('sf_upload_dir'))) ?>"  targe="_blank"  title="Завантажити"></a>
-      </td>
-      <td >
-      <a class="name" href="<?php echo 'http://usic.org.ua/upload'.substr($upload_table->getUrl(), strlen(sfConfig::get('sf_upload_dir'))) ?>" title="<?php echo $upload_table->getFilename(); ?>"  targe="_blank" >
-    	    <?php $fname = $upload_table->getFilename(); echo strlen($fname) > 23 ? substr(substr($fname,0,strripos($fname,".")),0,23): $fname ?></a></td>
-     <!-- <td>--><?php #echo $upload_table->getFilesize() ?><!---/td>-->
-<?php include_partial('show3', array('upload_table'=> $upload_table)) ?>
-      <td><?php echo $upload_table->getUser() ?></td>
-    </tr>
-    <?php endforeach; ?>
-  </tbody>
+</td></tr></tfoot>
 </form>
 </table>
-<br>
+<script type="text/javascript" src="/js/tablesort.js"></script>
+<br/>
 <?php if (sfContext::getInstance()->getUser()->isAuthenticated()): ?><a href="<?php echo url_for('upload/new') ?>">New</a><?php endif ?>

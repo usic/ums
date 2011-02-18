@@ -103,7 +103,7 @@ class uploadActions extends sfActions
 	    if  ($state == 'available')
 	    	$c->add(UploadTablePeer::STATE, $state);
 	    else $this->redirect('upload/show');
-	} else {
+	}else {
 	    if ($state == 'unavailable') {
 		$subc1 = $c->getNewCriterion(UploadTablePeer::STATE, 'unavailable');
 	        $subc2 = $c->getNewCriterion(UploadTablePeer::USER, $this->getUser()->getAttribute('login'));
@@ -120,10 +120,10 @@ class uploadActions extends sfActions
 	$subc1 = $c->getNewCriterion(UploadTablePeer::STATE, 'available');
 	if ($this->getUser()->isAuthenticated()) {
     	    $subc2 = $c->getNewCriterion(UploadTablePeer::STATE, 'availableForGid');
-	    $subc3 = $c->getNewCriterion(UploadTablePeer::STATE, 'unavailable');
+#	    $subc3 = $c->getNewCriterion(UploadTablePeer::STATE, 'unavailable');
 //	    $subc4 = $c->getNewCriterion(UploadTablePeer::USER, $this->getUser()->getAttribute('login'));
 //	    $subc3->addAnd($subc4);
-	    $subc2->addOr($subc3);
+#	    $subc2->addOr($subc3);
 	    $subc1->addOr($subc2);
 	}
 	$c->add($subc1);

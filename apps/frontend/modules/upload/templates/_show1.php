@@ -3,4 +3,4 @@
   <thead>
     <tr>
       <th align="center" valign="top">&nbsp;</th>
-      <th align="center" valign="top">Name</th>
+      <th align="center" class="sortable-text" valign="top"><a href="#">Name</a></th>

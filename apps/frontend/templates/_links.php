@@ -11,8 +11,9 @@ foreach($uploads as $upload){
 ?>
 <ul>
 <?php foreach ($links as $link): ?>
-<?php# echo $link->getUrl();?>
-<?php if (($link->getId()!==4)&&($link->getId()!==24)&&(sfContext::getInstance()->getUser()->isAuthenticated())){ 
+<?php# echo $link->getName()."<br/>";?>
+<?php if (($link->getId()!==4)&&($link->getId()!==24)&&(sfContext::getInstance()->getUser()->isAuthenticated())){
+#echo 1;
 	if($link->getId()==13){
 	    echo "<li>".link_to($link->getName()."&nbsp;(".count($requests).")", $link->getUrl())."</li>" ;
 	}
@@ -26,7 +27,7 @@ foreach($uploads as $upload){
 	    echo "<li>".link_to($link->getName(), $link->getUrl())."</li>" ;
 	}
   }
-  elseif(!sfContext::getInstance()->getUser()->isAuthenticated()){
+  elseif(sfContext::getInstance()->getUser()->isAuthenticated()==0){
     echo "<li>".link_to($link->getName(), $link->getUrl())."</li>" ;
     }
  ?>

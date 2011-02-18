@@ -1,6 +1,4 @@
 <h4>Users in group <?php echo $group ?></h4>
-<?php #print_r($users);echo "<br/>".$users[0];?>
-<?php #if (is_string($users[0])): ?>
 <?php if (strlen($users[0])>1): ?>
 <?php foreach($users as $user): ?>
 <ul>
@@ -10,4 +8,3 @@
 <?php else: ?>
 There are no users in this group.
 <?php endif; ?>
-<?php //print_r(is_string($users[0])) ?>

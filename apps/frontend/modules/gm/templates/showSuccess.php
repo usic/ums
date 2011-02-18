@@ -4,9 +4,11 @@
 <thead>
 </thead>
 <tbody>
+<?php #$users=gmActions::executeShowUser($request)?>
 <?php foreach ($groups as $group): ?>
   <tr>
   <td>
+  <?php #print_r($users = $this->caller->callScript('gm/showUser',array('name'=>$group))) );?>
 	<?php echo link_to($group, 'gm/showUser?group='.$group) ?>
   </td>
   <td>
