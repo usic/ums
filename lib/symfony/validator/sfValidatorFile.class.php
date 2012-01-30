@@ -684,6 +684,7 @@ class sfValidatedFile
       'application/x-bcpio' => 'bcpio',
       'application/x-bleeper' => 'bleep',
       'application/x-bzip2' => 'bz2',
+      'application/x-xz' => 'xz',
       'application/x-cdlink' => 'vcd',
       'application/x-chat' => 'chat',
       'application/x-chess-pgn' => 'pgn',
